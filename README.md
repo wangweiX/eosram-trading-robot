@@ -45,10 +45,10 @@ $ git@github.com:wangweiX/eosram-trading-robot.git
 
 ```json
 {
-  "mode": "buy",  # 配置程序启动后的初始交易模式。buy:买入 sell:卖出
-  "buy_line": 0.40, // 配置买入价位，单位:EOS/KB
-  "sell_line": 0.49, // 配置卖出价位，单位:EOS/KB
-  "reserve_ram": 4000, // 配置卖出时账户保留内存数量，单位:bytes(默认即可)
+  "mode": "buy",  // 配置程序启动后的初始交易模式。buy：买入 sell：卖出
+  "buy_line": 0.40, // 配置买入价位，单位：EOS/KB
+  "sell_line": 0.49, // 配置卖出价位，单位：EOS/KB
+  "reserve_ram": 4000, // 配置卖出时账户保留内存数量，单位：bytes(默认即可)
   "eos": {
     "broadcast": true,
     "chainId": "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",
