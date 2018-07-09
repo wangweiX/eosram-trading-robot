@@ -42,6 +42,7 @@ $ git@github.com:wangweiX/eosram-trading-robot.git
 ```
 
 #### 配置参数
+配置文件 `/config/config.json`
 
 ```json
 {
