@@ -1,0 +1,29 @@
+{
+  "name": "eosram-trading-robot",
+  "version": "1.0.0",
+  "description": "EOS RAM 自动交易机器人",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangweiX/eosram-trading-robot.git"
+  },
+  "keywords": [
+    "EOSRAM"
+  ],
+  "author": "wangwei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangweiX/eosram-trading-robot/issues"
+  },
+  "homepage": "https://github.com/wangweiX/eosram-trading-robot#readme",
+  "dependencies": {
+    "async": "^2.6.1",
+    "eosjs": "^15.0.3",
+    "osascript": "^1.2.0",
+    "shelljs": "^0.8.2",
+    "log4js": "^2.10.0"
+  }
+}
