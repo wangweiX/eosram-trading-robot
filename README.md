@@ -30,7 +30,7 @@
 #### 下载代码
 
 ```powershell
-$ git@github.com:wangweiX/eosram-trading-robot.git
+$ git clone git@github.com:wangweiX/eosram-trading-robot.git
 ```
 
 #### 安装依赖包
