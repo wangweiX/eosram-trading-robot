@@ -95,13 +95,21 @@ $ pm2 kill
 
 #### 日志输出
 
-![](https://img.i7years.com/blog/but_ram.png)
+![running_log](https://img.i7years.com/blog/but_ram.png)
+
+
+
+#### 错误日志
+
+> 程序在运行的过程中，会出现以下错误日志，属于正常现象，可以忽略。
+
+![error_log](https://img.i7years.com/blog/error_log.png)
 
 
 
 #### 交易通知
 
-![](https://img.i7years.com/blog/buy_ram_notice.png)
+![buy_ram_notice](https://img.i7years.com/blog/buy_ram_notice.png)
 
 
 
@@ -127,5 +135,5 @@ $ pm2 kill
 ## 最后
 
 - 如果对你有所帮助，请给个 Star :stuck_out_tongue: :blush:
-- 如果帮你赚到了不少的eos，请犒劳犒劳我。我的EOS账户：`gi2dknbuhage`   :kissing_heart:
+- 如果帮你赚到了不少的EOS，请犒劳犒劳我。我的EOS账户：`gi2dknbuhage`   :kissing_heart:
 
