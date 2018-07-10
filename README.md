@@ -1,5 +1,7 @@
 # EOS RAM 交易机器人🤖
 
+[![Build Status](https://travis-ci.org/wangweiX/eosram-trading-robot.svg?branch=master)](https://travis-ci.org/wangweiX/eosram-trading-robot)
+
 > 本教程受此文章启发：https://bihu.com/article/854060
 
 
