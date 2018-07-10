@@ -44,7 +44,7 @@ $ git clone git@github.com:wangweiX/eosram-trading-robot.git
 #### 配置参数
 配置文件 `/config/config.json`
 
-```json
+```json5
 {
   "mode": "buy",  // 配置程序启动后的初始交易模式。buy：买入 sell：卖出
   "buy_line": 0.40, // 配置买入价位，单位：EOS/KB
@@ -128,7 +128,7 @@ $ pm2 kill
 
 ## 免责声明
 
-- 本程序完全开源，由于自身操作不当造成的任何EOS损失，均与本人无关，请妥善操作。
+- 本程序完全开源，由于自身操作不当造成的任何EOS损失，均与本人无关，请妥善操作。:flushed:
 
 
 
