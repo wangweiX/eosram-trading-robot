@@ -2,14 +2,12 @@
  * Constant configuration
  */
 const config = require('./config/config.json');
+const log4js_config = require('./config/log4js.json');
 const async = require('async');
 const shell = require('shelljs');
 const log4js = require('log4js');
 const logger = log4js.getLogger("RAM-Robot");
-log4js.configure({
-    appenders: {cheese: {type: 'file', filename: config.log4js.log_file_path}},
-    categories: {default: {appenders: ['cheese'], level: config.log4js.log_level}}
-});
+log4js.configure(log4js_config);
 
 /**
  * Eos Client configuration

@@ -1,0 +1,17 @@
+{
+  "appenders": {
+    "app": {
+      "type": "dateFile",
+      "filename": "logs/eosram-trading.log",
+      "pattern": "-yyyy-MM-dd"
+    },
+    "errors": {
+      "type": "logLevelFilter",
+      "level": "ERROR",
+      "appender": "errorFile"
+    }
+  },
+  "categories": {
+    "default": { "appenders": [ "app", "errors" ], "level": "DEBUG" }
+  }
+}

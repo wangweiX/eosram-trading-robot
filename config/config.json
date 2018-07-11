@@ -15,10 +15,6 @@
     "verbose": false
   },
   "interval": 500,
-  "log4js": {
-    "log_file_path": "logs/eosram-trading.log",
-    "log_level": "debug"
-  },
   "keosd": {
     "wallet_url": "http://127.0.0.1:8900/"
   },
