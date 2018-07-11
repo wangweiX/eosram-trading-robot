@@ -64,10 +64,6 @@ $ git clone git@github.com:wangweiX/eosram-trading-robot.git
     "verbose": false
   },
   "interval": 500,
-  "log4js": {
-    "log_file_path": "logs/eosram-trading.log",
-    "log_level": "debug"
-  },
   "keosd": {
     "wallet_url": "http://127.0.0.1:8900/" // 配置本地钱包的url
   },
