@@ -116,7 +116,7 @@ setInterval(
 
                     logger.error("Reach buying price ！！! buy_amount=", buy_amount);
                     let buy_cmd = `cleos --wallet-url=${config.keosd.wallet_url} -u http://mainnet.genereos.io system buyram -j ${config.wallet.account_name} ${config.wallet.account_name} "${buy_amount} EOS"`;
-                    // shell.exec(buy_cmd);
+                    shell.exec(buy_cmd);
 
                     let buy_notification = `osascript -e 'display notification "${buy_msg} ! !" sound name "Sound Name" with title "${title}"'`;
                     shell.exec(buy_notification);
@@ -133,7 +133,7 @@ setInterval(
 
                     logger.error("Reach the selling price ！！! sell_ram=", sell_ram);
                     let sell_cmd = `cleos --wallet-url=${config.keosd.wallet_url} -u http://mainnet.genereos.io system sellram -j ${config.wallet.account_name} ${sell_ram}`;
-                    // shell.exec(sell_cmd);
+                    shell.exec(sell_cmd);
 
                     let sell_notification = `osascript -e 'display notification "${sell_msg} ! !" sound name "Sound Name" with title "${title}"'`;
                     shell.exec(sell_notification);
