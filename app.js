@@ -17,8 +17,23 @@ const eosClient = Eos(config.eos);
 
 const unlock_wallet_cmd = `cleos --wallet-url=${config.keosd.wallet_url} wallet unlock -n ${config.wallet.wallet_name} --password ${config.wallet.password}`;
 
-const pkill_keosd = `pkill keosd`;
-shell.exec(pkill_keosd);
+shell.exec(`pkill keosd`);
+
+let count = 0;
+if (count < config.max_tx_number) {
+    setInterval(
+        function () {
+            async.parallel(
+                tasks(), function (err, results) {
+                    dealResults(results);
+                });
+        },
+        config.interval
+    );
+} else {
+    logger.info("Maximum number of transaction pens reached !!! Exist program . ");
+    shell.exec(`pm2 kill`);
+}
 
 /**
  * start
@@ -193,6 +208,7 @@ function sell_ram(price, my_quota_ram, sell_msg, title) {
         shell.exec(sell_notification);
 
         config.mode = "buy"; // switch to buy mode
+        ++count; // add tx number
     } else {
         logger.info("Keep Waiting to sell");
     }

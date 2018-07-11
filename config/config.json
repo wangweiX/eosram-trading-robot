@@ -4,6 +4,7 @@
   "sell_line": 0.490,
   "reserve_ram": 4000,
   "buy_ram_by_eos_amount": 0.001,
+  "max_tx_number": 1,
   "eos": {
     "broadcast": true,
     "chainId": "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",

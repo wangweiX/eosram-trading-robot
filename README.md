@@ -53,6 +53,7 @@ $ git clone git@github.com:wangweiX/eosram-trading-robot.git
   "sell_line": 0.49, // 配置卖出价位，单位：EOS/KB
   "reserve_ram": 4000, // 配置卖出时账户保留内存数量，单位：bytes(默认即可)
   "buy_ram_by_eos_amount": 0.001, // 设置用于购买内存的EOS数量，如果小于0，例如-1，则表示全量买入
+  "max_tx_number": 1, // 设置完成买入卖出回合数上限，避免程序不停买入卖出造成损失
   "eos": {
     "broadcast": true,
     "chainId": "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",
@@ -126,7 +127,7 @@ $ pm2 kill
 
 - 由于该程序一直在买卖模式间切换，强烈建议**新开一个EOS账户**来配置程序，用作专门的机器人交易账户，以免主账号EOS被一次性买入，造成不必要的经济损失。
 
-- 请根据自身的风险偏好以及当前RAM价格波动的幅度，合理设置 `buy_ram_by_eos_amount`, `buy_line`, `sell_line`, 以免程序不停买入卖出，造成EOS亏损。
+- 请根据自身的风险偏好以及当前RAM价格波动的幅度，合理设置 `buy_ram_by_eos_amount`, `buy_line`, `sell_line`,`max_tx_number` 以免程序不停买入卖出，造成EOS亏损。
 
 - 由于EOS内存交易会收取0.5%的手续费，因此实际买到的内存数量为:
 
