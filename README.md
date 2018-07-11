@@ -23,7 +23,7 @@
 
 #### 导入钱包
 
-- 指南：https://developers.eos.io/eosio-nodeos/docs/learn-about-wallets-keys-and-accounts-with-cleos
+- [官方指南](https://developers.eos.io/eosio-nodeos/docs/learn-about-wallets-keys-and-accounts-with-cleos)
 
 
 
@@ -52,6 +52,7 @@ $ git clone git@github.com:wangweiX/eosram-trading-robot.git
   "buy_line": 0.40, // 配置买入价位，单位：EOS/KB
   "sell_line": 0.49, // 配置卖出价位，单位：EOS/KB
   "reserve_ram": 4000, // 配置卖出时账户保留内存数量，单位：bytes(默认即可)
+  "buy_ram_by_eos_amount": 0.001, // 设置用于购买内存的EOS数量，如果小于0，例如-1，则表示全量买入
   "eos": {
     "broadcast": true,
     "chainId": "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",
@@ -66,6 +67,9 @@ $ git clone git@github.com:wangweiX/eosram-trading-robot.git
   "log4js": {
     "log_file_path": "logs/eosram-trading.log",
     "log_level": "debug"
+  },
+  "keosd": {
+    "wallet_url": "http://127.0.0.1:8900/" // 配置本地钱包的url
   },
   "wallet": {
     "account_name": "", // 配置EOS账户名
@@ -84,7 +88,7 @@ $ pm2 start app.js
 #### 重启程序
 
 ```powershell
-$ pm2 restart app.js
+$ pm2 restart $pid
 ```
 
 #### 终止程序
@@ -101,32 +105,50 @@ $ pm2 kill
 
 
 
-#### 错误日志
-
-> 程序在运行的过程中，会出现以下错误日志，属于正常现象，可以忽略。
-
-![error_log](https://img.i7years.com/blog/error_log.png)
-
-
-
 #### 交易通知
 
-![buy_ram_notice](https://img.i7years.com/blog/eos-ram-trading-notice.png)
+![buy_ram_notice](https://img.i7years.com/blog/eos_trading.png)
 
+
+
+## 问题说明
+
+1. Unable to connect to keosd, if keosd is running please kill the process and try again。
+
+   - 修改 `~/eosio-wallet/config.ini` 中的配置项 `http-server-address`，端口改为8910。
+   - 设置 config.json 配置文件，修改 `wallet_url` 与上面的端口号一致。
+
+2. 连接失败问题，可以忽略。
+
+   ![error_log](https://img.i7years.com/blog/error_log.png)
 
 
 
 ## 注意事项
 
+- 请在可信任设备上部署，一般为自己的电脑，绝对不要部署到阿里云、腾讯云等公有云上，防止私钥被盗。
+
 - 由于该程序一直在买卖模式间切换，强烈建议**新开一个EOS账户**来配置程序，用作专门的机器人交易账户，以免主账号EOS被一次性买入，造成不必要的经济损失。
 
 - 建议专用的机器人交易账号的EOS数量为主账号EOS数量的1/10，看个人风险承受能力。
 
-- 请在可信任设备上部署，一般为自己的电脑，绝对不要部署到阿里云、腾讯云等公有云上。
+- 设置好每次买入内存所需要的EOS数量：`buy_ram_by_eos_amount`。
 
-- 行情软件推荐：http://southex.com/
+- 由于EOS内存交易会收取0.5%的手续费，因此实际买到的内存数量为:
 
-  
+  ```mathematica
+  buy_ram_by_eos_amount * (1 - 0.5%) / ram_price
+  ```
+
+
+
+## 行情软件
+
+- http://southex.com/
+- https://eos.feexplorer.io/
+- https://dapp.mytokenpocket.vip/ram/index.html?from=nav_en
+
+
 
 ## 免责声明
 
