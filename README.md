@@ -63,7 +63,7 @@ $ git clone git@github.com:wangweiX/eosram-trading-robot.git
     "sign": true,
     "verbose": false
   },
-  "interval": 500,
+  "interval": 500, // 配置数据请求的时间间隔，单位:ms（默认即可）
   "keosd": {
     "wallet_url": "http://127.0.0.1:8900/" // 配置本地钱包的url
   },
