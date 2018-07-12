@@ -104,7 +104,7 @@ $ pm2 kill
 
 #### 交易通知
 
-![buy_ram_notice](https://img.i7years.com/blog/eos_trading.png)
+![buy_ram_notice](https://img.i7years.com/blog/Eos%20Ram%20Trading%20Notice.png)
 
 
 
