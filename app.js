@@ -20,20 +20,22 @@ const unlock_wallet_cmd = `cleos --wallet-url=${config.keosd.wallet_url} wallet 
 shell.exec(`pkill keosd`);
 
 let count = 0;
-if (count < config.max_tx_number) {
-    setInterval(
-        function () {
-            async.parallel(
-                tasks(), function (err, results) {
+setInterval(
+    function () {
+        async.parallel(
+            tasks(),
+            function (err, results) {
+                if (count < config.max_tx_number) {
                     dealResults(results);
-                });
-        },
-        config.interval
-    );
-} else {
-    logger.info("Maximum number of transaction pens reached !!! Exist program . ");
-    shell.exec(`pm2 kill`);
-}
+                } else {
+                    logger.info("Maximum number of transaction pens reached !!! Exist program . ");
+                    shell.exec(`pm2 kill`);
+                }
+            });
+    },
+    config.interval
+);
+
 
 /**
  * start
