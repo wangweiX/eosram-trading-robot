@@ -109,13 +109,16 @@ $ pm2 kill
 
 
 ## 问题说明
+1. cannot find data.core_liquid_balance
+   
+   确保你所配置的EOS账户有余额，否则会出现这个问题
 
-1. Unable to connect to keosd, if keosd is running please kill the process and try again。
+2. Unable to connect to keosd, if keosd is running please kill the process and try again。
 
    - 修改 `~/eosio-wallet/config.ini` 中的配置项 `http-server-address`，端口改为8910。
    - 设置 config.json 配置文件，修改 `wallet_url` 与上面的端口号一致。
 
-2. 连接失败问题，可以忽略。
+3. 连接失败问题，可以忽略。
 
    ![error_log](https://img.i7years.com/blog/error_log.png)
 
