@@ -37,18 +37,6 @@ setInterval(
 );
 
 
-/**
- * start
- */
-setInterval(
-    function () {
-        async.parallel(
-            tasks(), function (err, results) {
-                dealResults(results);
-            });
-    },
-    config.interval
-);
 
 /**
  * Query data
