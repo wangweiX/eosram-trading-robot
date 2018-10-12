@@ -157,5 +157,3 @@ $ pm2 kill
 ## 最后
 
 - 如果对你有所帮助，请给个 Star :stuck_out_tongue: :blush:
-- 如果帮你赚到了不少的EOS，请犒劳犒劳我。我的EOS账户：`gi2dknbuhage`   :kissing_heart:
-
